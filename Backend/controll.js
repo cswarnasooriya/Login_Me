@@ -6,16 +6,16 @@ const users =[
     {
         id:2,
         name:"Dhammika",
-    }
+    },
 ];
 
 const getUsers =(cb) =>{
-    cd(users);
+    cb(users);
 };
 
 
 const getUserById = (id, cb) =>{
-    const user = users.find(user => user.id ==id);
+    const user = users.find(user => user.id == id);
     cb(user);
 };
 
