@@ -1,9 +1,16 @@
 import  { Button, Grid,Input,Typography } from "@mui/material"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-const UserForm = props => {
+const UserForm = ({addUser, submited}) => {
     const [id, setId] = useState(0);
     const [name, setName] = useState("");
+
+    useEffect(() => {
+        if(!submited){
+            setId(0);
+            setName('');
+        }
+    },[submited]);
 
   return (
     <Grid
@@ -95,6 +102,7 @@ const UserForm = props => {
                 }
 
             }}
+            onClick={() => addUser({id, name})}
         >Add
         
         </Button>
