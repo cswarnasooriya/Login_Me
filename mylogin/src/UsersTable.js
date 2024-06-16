@@ -1,6 +1,6 @@
 import  { TableContainer, Table, TableHead, TableCell, TableRow, TableBody, Paper, Button } from '@mui/material';
 
-const UsersTable = ({rows}) => {
+const UsersTable = ({rows, selectedUser}) => {
  return(
     <TableContainer component={Paper}>
     <Table>
@@ -23,7 +23,7 @@ const UsersTable = ({rows}) => {
                                 sx={{
                                     margin:'0px 10px'
                                 }}
-                                onClick={() =>{}}
+                                onClick={() => selectedUser({ id:row.id, name: row.name})}
                             
                             >
                                 Update
