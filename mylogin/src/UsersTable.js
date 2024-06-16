@@ -1,6 +1,6 @@
 import  { TableContainer, Table, TableHead, TableCell, TableRow, TableBody, Paper, Button } from '@mui/material';
 
-const UsersTable = ({rows, selectedUser}) => {
+const UsersTable = ({rows, selectedUser, deleteUser}) => {
  return(
     <TableContainer component={Paper}>
     <Table>
@@ -32,7 +32,7 @@ const UsersTable = ({rows, selectedUser}) => {
 
                             <Button
                                 sx={{ margin:'0px 10px'}}
-                                onClick={() =>{}}
+                                onClick={() =>deleteUser({id:row.id})}
                             
                             >
                                 Delete
